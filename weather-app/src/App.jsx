@@ -5,7 +5,7 @@ import Weather from './components/Weather'
 function App() {
 
   return (
-    <div className='flex justify-center pt-8'>
+    <div className=''>
       <Weather />
     </div>
   )
