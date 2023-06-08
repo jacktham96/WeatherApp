@@ -22,7 +22,6 @@ const Weather = () => {
                 const weatherResponse = await response[0].json()
                 const forecastResponse = await response[1].json()
 
-                console.log(forecastResponse);
 
                 setCurrentWeather({city: searchData.label, ...weatherResponse})
                 setForcast({city: searchData.label, ...forecastResponse})
@@ -30,7 +29,6 @@ const Weather = () => {
             .catch((error)=>console.log(error))
     }
 
-    console.log(currentWeather);
 
 
   return (
