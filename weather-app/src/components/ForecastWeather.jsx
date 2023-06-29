@@ -1,4 +1,5 @@
 import React from "react";
+import Card from "./Card";
 
 const WEEK = [
     "Monday",
@@ -55,13 +56,12 @@ const ForecastWeather = ({data}) => {
         //     </div>
         // </div>
 
-
-        <div>
-            <h2>Weather Forcast</h2>
-            <div className="forecast-container">
+        <div className="">
+            <div className="forecast-container flex flex-col gap-y-5 text-white my-10">
                 {data.list.splice(0, 7).map((forcastItem , index)=>(
-                    <div key={index}>
-                        <div>
+                    <div className="my-6 mx-4 flex justify-center" key={index}>
+                        <Card>
+                        <div className="">
                             <img src={`/icons/${forcastItem.weather[0].icon}.png`} alt="weather" />
                             <label>{forcastDay[index]}</label>
                             <label className="description">{forcastItem.weather[0].description}</label>
@@ -70,7 +70,9 @@ const ForecastWeather = ({data}) => {
                             <h3>temp_max {forcastItem.main.temp_max}°C</h3>
                             <h3>temp_min {forcastItem.main.temp_min}°C</h3>
                         </div>
+                        </Card>
                     </div>
+
                 ))}
             </div>
         </div>
